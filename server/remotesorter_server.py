@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Implementation of a multiprocess TCP server that sorts lists of strings
 """
@@ -47,6 +48,7 @@ class ForkedClientHandler(socketserver.BaseRequestHandler):
         client_req = self.request.recv(defaults.tcp_buffsize)
         self.linesleft = int(client_req.strip())
         while self.linesleft > 0:
+            self.request.sendall("OK".encode())
             client_req = self.request.recv(defaults.tcp_buffsize)
             #converts data to a list of strings, delimited by whitespace
             sorted_list = merge_sort(str(client_req, 'ascii').strip().split())
