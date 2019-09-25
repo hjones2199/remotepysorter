@@ -22,6 +22,3 @@ distributions and FreeBSD, but it should run on any POSIX compliant system.
 was easily modified and integrated into this project, so some of the structure may seem familiar.
 The test files are found in the datafiles folder, and each one has three lines with twenty words
 per line.
-
-**Author Information**
-    Name: Hunter Jones
